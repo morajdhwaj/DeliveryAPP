@@ -20,6 +20,10 @@
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
-      </activity>
+      </activity>\
+       <!-- You will only need to add this meta-data tag, but make sure it's a child of application -->
+   <meta-data
+     android:name="com.google.android.geo.API_KEY"
+     android:value="AIzaSyBjGzB9tcCCiM7MeS5P02nc9d3SCutKoQs"/>
     </application>
 </manifest>
