@@ -5,9 +5,9 @@ import {headerComponentStyle} from './header-component-style';
 const HeaderComponent = (props: HeaderComponentParams) => {
   return (
     <Appbar>
-      {props.hasBackButton ? (
-        <Appbar.BackAction />
-      ) : (
+      {/* {props.hasBackButton ? ( */}
+      <Appbar.BackAction />
+      {/* ) : (
         <Menu
           visible={true}
           onDismiss={() => {}}
@@ -18,7 +18,7 @@ const HeaderComponent = (props: HeaderComponentParams) => {
             />
           }
         />
-      )}
+      )} */}
       <Appbar.BackAction />
       <Appbar.Content title={props.title} />
     </Appbar>
