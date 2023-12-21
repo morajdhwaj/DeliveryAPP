@@ -7,9 +7,10 @@ import Register from './app/screens/register/register.screen';
 import HomeScreen from './app/screens/home/home.screen';
 import AddressScreen from './app/screens/address/adress.screen';
 import DeliveryScreen from './app/screens/delivery/delivery.screen';
+import DeliveriesScreen from './app/screens/deliveries/delivery.screen';
 
 
-
+ 
 
 
 
@@ -22,7 +23,8 @@ function App(): JSX.Element {
     {/* <Register/> */}
     {/* <HomeScreen/> */}
     {/* <AddressScreen/> */}
-   <DeliveryScreen/>
+   {/* <DeliveryScreen/> */}
+   <DeliveriesScreen/>
       </PaperProvider>
   );
 }
