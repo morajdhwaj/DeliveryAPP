@@ -7,9 +7,15 @@ export const homeStyle = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  fab: {
+  fab1: {
     position: 'absolute',
     right: 0,
+    bottom: 0,
+    margin: 16,
+  },
+  fab2: {
+    position: 'absolute',
+    left: 0,
     bottom: 0,
     margin: 16,
   },

@@ -7,12 +7,20 @@ import { ConfirmDeliveryCardComponent } from '../../components/confirm-delivery-
 import { SearchingDeliveryComponent } from '../../components/searching-delivery/searching-delivery-component';
 import HeaderComponent from '../../components/header/header.component';
 
-const HomeScreen = () => {
-  const state: number = 3;
+
+interface HomeScreenProps{
+  navigation:any
+}
+
+const HomeScreen = (props:HomeScreenProps) => {
+const goToDeliveryRoute= ()=> props.navigation.navigate("DeliveryRoute")
+const deliveries= ()=> props.navigation.navigate("Deliveries")
+
+  const state: number = 1;
 
   return (
     <SafeAreaView style={homeStyle.flex}>
-      <HeaderComponent title='Delivery App'/>
+      <HeaderComponent title='Delivery App'  />
       <MapView
         style={homeStyle.flex}
         initialRegion={{
@@ -50,7 +58,11 @@ const HomeScreen = () => {
           </>
         ) : null}
       </MapView>
-      {state == 1 ? <FAB icon="plus" style={homeStyle.fab} /> : null}
+      {state == 1 ? <View>
+        <FAB icon="plus" style={homeStyle.fab1} onPress={goToDeliveryRoute}/>
+        <FAB icon="minus" style={homeStyle.fab2}  onPress={deliveries}/>
+
+      </View> : null}
       {state == 2 ? (
        <ConfirmDeliveryCardComponent/>
       ) : null}

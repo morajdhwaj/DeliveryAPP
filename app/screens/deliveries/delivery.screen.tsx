@@ -4,9 +4,17 @@ import HeaderComponent from '../../components/header/header.component';
 import { Card, Text } from 'react-native-paper';
 import { deliveriesStyle } from './deliveries.style';
 
-const DeliveriesScreen = () => {
+
+interface DeliveriesScreenProps{
+  navigation:any
+
+}
+
+const DeliveriesScreen = (props:DeliveriesScreenProps) => {
 
 const deliveries :number[]= [1,2]
+
+const goToDeliveryDetails =()=>props.navigation.navigate("Delivery")
 
   return (
     <SafeAreaView>
@@ -15,7 +23,9 @@ const deliveries :number[]= [1,2]
       data={deliveries}
       keyExtractor={(item,index)=>`deliveries${index}`}
       renderItem={({item,index})=>
-        <Card style={{...deliveriesStyle.card, ...deliveriesStyle.cardStatus}}>
+        <Card style={{...deliveriesStyle.card, ...deliveriesStyle.cardStatus}}
+        onPress={goToDeliveryDetails}
+        >
         <Card.Cover
         source={{uri:"https://evocreative.com/wp-content/uploads/blog-article-bg-googlemaps-1-350x145.jpg"}}
         />

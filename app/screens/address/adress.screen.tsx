@@ -4,12 +4,21 @@ import {AddressStyle} from './address-style';
 import {Button, TextInput} from 'react-native-paper';
 import HeaderComponent from '../../components/header/header.component';
 
-const AddressScreen = () => {
+
+interface AddressScreenProps {
+  navigation:any
+}
+
+
+
+const AddressScreen = (prop: AddressScreenProps) => {
   const destinations: number[] = [1,2];
+
+  const loadDeliveryPrice = ()=> prop.navigation.navigate("Delivery")
 
   return (
     <SafeAreaView>
-      <HeaderComponent title="Header" />
+      <HeaderComponent title="Address"  />
       <View style={AddressStyle.marginHorizontal}>
         <TextInput label="origin" />
         {destinations.map((destination: number, index: number) => (
@@ -32,7 +41,9 @@ const AddressScreen = () => {
         style={AddressStyle.readyButtonStyle}
         mode="contained"
         labelStyle={AddressStyle.readyButtonLabelStyle}
-        uppercase={false}>
+        uppercase={false}
+        onPress={loadDeliveryPrice}
+        >
         Ready
       </Button>
     </SafeAreaView>

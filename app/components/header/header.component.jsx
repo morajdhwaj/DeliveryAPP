@@ -1,25 +1,11 @@
-import React from 'react';
-import {Appbar, Menu} from 'react-native-paper';
-import {headerComponentStyle} from './header-component-style';
+import React, {useState} from 'react';
+import {Alert, Text, TouchableOpacity} from 'react-native';
+
+import {Appbar} from 'react-native-paper';
 
 const HeaderComponent = (props: HeaderComponentParams) => {
   return (
     <Appbar>
-      {/* {props.hasBackButton ? ( */}
-      <Appbar.BackAction />
-      {/* ) : (
-        <Menu
-          visible={true}
-          onDismiss={() => {}}
-          anchor={
-            <Appbar.Action
-              icon="menu"
-              color={headerComponentStyle.menu.color}
-            />
-          }
-        />
-      )} */}
-      <Appbar.BackAction />
       <Appbar.Content title={props.title} />
     </Appbar>
   );

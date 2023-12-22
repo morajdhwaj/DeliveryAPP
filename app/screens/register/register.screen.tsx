@@ -4,7 +4,15 @@ import { Button, TextInput} from 'react-native-paper';
 import { registerStyle } from './register.style';
 import HeaderComponent from '../../components/header/header.component';
 
-const Register = () => {
+
+interface RegisterScreenProps{
+  navigation:any
+}
+
+const Register = (props:RegisterScreenProps) => {
+  const register =()=>props.navigation.navigate("Home")
+
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -23,7 +31,7 @@ const Register = () => {
             right={<TextInput.Icon name="eye-off" />}
           />
           <TextInput label="Phone-Number" keyboardType="phone-pad" />
-          <Button mode="contained" style={registerStyle.button}>Register</Button>
+          <Button mode="contained" style={registerStyle.button} onPress={register}>Register</Button>
         </View>
       </ScrollView>
     </SafeAreaView>
